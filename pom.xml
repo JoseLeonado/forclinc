@@ -19,6 +19,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<io.jsonwebtoken.version>0.9.1</io.jsonwebtoken.version>
 	</properties>
 
 	<dependencies>
@@ -67,6 +68,19 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!-- IO JSON Web Token -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>${io.jsonwebtoken.version}</version>
 		</dependency>
 	</dependencies>
 
