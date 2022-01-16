@@ -9,4 +9,8 @@ public class DBService {
 		// TODO implementar os dados iniciais para o profile test
 	}
 
+	public void instanciarBancoDeDadosDev() {
+		// TODO implementar os dados iniciais para o profile dev
+	}
+	
 }
