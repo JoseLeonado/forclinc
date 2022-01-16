@@ -81,7 +81,6 @@ public class Usuario implements Serializable {
 	private Set<Perfil> perfis = new HashSet<>();
 
 	public Usuario() {
-
 	}
 
 	public Usuario(Long id, String email, String senha, String nome, String celular,

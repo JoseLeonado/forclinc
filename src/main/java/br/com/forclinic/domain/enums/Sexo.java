@@ -16,7 +16,7 @@ public enum Sexo {
 	
 	@Override
 	public String toString() {
-		return this.descricao;
+		return descricao;
 	}
 	
 }

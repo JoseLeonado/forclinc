@@ -1,18 +1,18 @@
-package br.com.forclinic.config;
+package br.com.forclinic.core.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import br.com.forclinic.config.service.DBService;
+import br.com.forclinic.core.service.DadosInicialService;
 
 @Configuration
 @Profile("test")
 public class TestConfig {
 	
 	@Autowired
-	private DBService dbService;
+	private DadosInicialService dbService;
 
 	@Bean
 	public boolean instanciarBancoDeDados() {

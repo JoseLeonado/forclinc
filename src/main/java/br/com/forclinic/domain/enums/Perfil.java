@@ -17,7 +17,7 @@ public enum Perfil {
 	
 	@Override
 	public String toString() {
-		return this.descricao;
+		return descricao;
 	}	
 	
 }
