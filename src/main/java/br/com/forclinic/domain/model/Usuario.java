@@ -28,21 +28,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.com.forclinic.domain.enums.Perfil;
 import br.com.forclinic.domain.enums.Sexo;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-@Data
 @Entity
 @Table(name = "usuario")
 @DynamicInsert(value = true)
 @Inheritance(strategy = InheritanceType.JOINED)
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
@@ -83,8 +78,8 @@ public class Usuario implements Serializable {
 	public Usuario() {
 	}
 
-	public Usuario(Long id, String email, String senha, String nome, String celular,
-			Boolean admistradorConta, Sexo sexo, LocalDateTime dataCadastro, LocalDateTime dataAtualizacao) {
+	public Usuario(Long id, String email, String senha, String nome, String celular, Boolean admistradorConta, Sexo sexo,
+			LocalDateTime dataCadastro, LocalDateTime dataAtualizacao) {
 		this.id = id;
 		this.email = email;
 		this.senha = senha;
@@ -100,4 +95,109 @@ public class Usuario implements Serializable {
 		perfis.add(perfil);
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public Boolean getAdmistradorConta() {
+		return admistradorConta;
+	}
+
+	public void setAdmistradorConta(Boolean admistradorConta) {
+		this.admistradorConta = admistradorConta;
+	}
+
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
+
+	public LocalDateTime getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(LocalDateTime dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
+	public LocalDateTime getDataAtualizacao() {
+		return dataAtualizacao;
+	}
+
+	public void setDataAtualizacao(LocalDateTime dataAtualizacao) {
+		this.dataAtualizacao = dataAtualizacao;
+	}
+
+	public Set<Perfil> getPerfis() {
+		return perfis;
+	}
+
+	public void setPerfis(Set<Perfil> perfis) {
+		this.perfis = perfis;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+	
 }

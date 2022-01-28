@@ -1,8 +1,5 @@
 package br.com.forclinic.domain.enums;
 
-import lombok.Getter;
-
-@Getter
 public enum Perfil {
 
 	ADMIN("ROLE_ADMIN"), 
@@ -19,5 +16,9 @@ public enum Perfil {
 	public String toString() {
 		return descricao;
 	}	
+	
+	public String getDescricao() {
+		return descricao;
+	}
 	
 }

@@ -1,8 +1,5 @@
 package br.com.forclinic.domain.enums;
 
-import lombok.Getter;
-
-@Getter
 public enum Sexo {
 	
 	MASCULINO("Masculino"),
@@ -16,6 +13,10 @@ public enum Sexo {
 	
 	@Override
 	public String toString() {
+		return descricao;
+	}
+	
+	public String getDescricao() {
 		return descricao;
 	}
 	
